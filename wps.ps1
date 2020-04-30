@@ -2,7 +2,7 @@ function RepoUpdate {
     param(
         # Parameter help description
         [Parameter(Mandatory)]$RepoList
-        ,$ModulesParentDir = "$PSScriptRoot\..\"
+        ,$ModulesParentDir = (Split-Path "$PSScriptRoot" -Parent)
     )
     $RepoList | % {
         try {
