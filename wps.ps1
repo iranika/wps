@@ -9,11 +9,12 @@ function RepoUpdate {
             $current = Get-Location
             $ModuleName = ($_ -replace ".git", "") -replace "^.*/",""
             $ModulePath = Join-Path $ModulesParentDir $ModuleName
+            echo $ModulePath
             if (Test-Path $ModulePath){
                 Set-Location $ModulePath
                 git pull
             }else{
-                Set-Location $ModulesDir
+                Set-Location $ModulesParentDir
                 git clone $_
             }    
         }
