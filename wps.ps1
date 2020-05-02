@@ -63,3 +63,5 @@ function Update-Wps{
     }
     Set-Location $current
 }
+
+Export-ModuleMember -Alias *
